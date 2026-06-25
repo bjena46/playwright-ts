@@ -1,18 +1,38 @@
-import { test, expect } from '@playwright/test';
+import { expect, type Locator, type Page } from "@playwright/test";
+import { log } from "../helpers/logger.js";
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+export default class BasePage {
+    readonly page: Page;
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+    constructor(page: Page) {
+        this.page = page;
+    }
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+    /* All reusable actions */
+    async navigateTo(path: string) {
+        await log("info", `Navigating to the path: ${path}`);
+        await this.page.goto(path);
+    }
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+    /** Click action */
+    async click(ele: Locator) {
+        try {
+            await expect(ele).toBeVisible({ timeout: 10_000 }); // Custom timeout: Default - 5 seconds
+            await ele.click();
+        } catch (error) {
+            await log("error", `Failed to click element: ${ele.toString()}, original error: ${error}`);
+            throw error;
+        }
+    }
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
+    /** Type action */
+    async typeInto(ele: Locator, text: string) {
+        try {
+            await expect(ele).toBeVisible({ timeout: 10_000 });
+            await ele.fill(text);
+        } catch (error) {
+            await log("error", `Failed to type into element: ${ele.toString()}, original error: ${error}`);
+            throw error;
+        }
+    }
+}
