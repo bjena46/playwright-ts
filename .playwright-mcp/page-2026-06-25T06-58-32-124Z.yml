@@ -1,0 +1,67 @@
+- generic [active] [ref=e1]:
+  - link "" [ref=e2] [cursor=pointer]:
+    - /url: "#"
+    - generic [ref=e3]: 
+  - navigation [ref=e4]:
+    - list [ref=e5]:
+      - link "" [ref=e6] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e7]: 
+      - listitem [ref=e8]:
+        - link "CURA Healthcare" [ref=e9] [cursor=pointer]:
+          - /url: ./
+      - listitem [ref=e10]:
+        - link "Home" [ref=e11] [cursor=pointer]:
+          - /url: ./
+      - listitem [ref=e12]:
+        - link "History" [ref=e13] [cursor=pointer]:
+          - /url: history.php#history
+      - listitem [ref=e14]:
+        - link "Profile" [ref=e15] [cursor=pointer]:
+          - /url: profile.php#profile
+      - listitem [ref=e16]:
+        - link "Logout" [ref=e17] [cursor=pointer]:
+          - /url: authenticate.php?logout
+  - banner [ref=e18]:
+    - generic [ref=e19]:
+      - heading "CURA Healthcare Service" [level=1] [ref=e20]
+      - heading "We Care About Your Health" [level=3] [ref=e21]
+      - link "Make Appointment" [ref=e22] [cursor=pointer]:
+        - /url: ./index.php#appointment
+  - generic [ref=e26]:
+    - heading "Profile" [level=2] [ref=e27]
+    - paragraph [ref=e28]: Under construction.
+    - paragraph [ref=e29]:
+      - link "Logout" [ref=e30] [cursor=pointer]:
+        - /url: https://katalon-demo-cura.herokuapp.com/authenticate.php?logout
+  - contentinfo [ref=e31]:
+    - generic [ref=e34]:
+      - heading "CURA Healthcare Service" [level=4] [ref=e35]:
+        - strong [ref=e36]: CURA Healthcare Service
+      - paragraph [ref=e37]:
+        - text: Atlanta 550 Pharr Road NE Suite 525
+        - text: Atlanta, GA 30305
+      - list [ref=e38]:
+        - listitem [ref=e39]:
+          - generic [ref=e40]: 
+          - text: (678) 813-1KMS
+        - listitem [ref=e41]:
+          - generic [ref=e42]: 
+          - link "info@katalon.com" [ref=e43] [cursor=pointer]:
+            - /url: mailto:info@katalon.com
+      - list [ref=e44]:
+        - listitem [ref=e45]:
+          - link "" [ref=e46] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e47]: 
+        - listitem [ref=e48]:
+          - link "" [ref=e49] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e50]: 
+        - listitem [ref=e51]:
+          - link "" [ref=e52] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e53]: 
+      - separator [ref=e54]
+      - paragraph [ref=e55]: Copyright © CURA Healthcare Service 2026
+    - text: 
